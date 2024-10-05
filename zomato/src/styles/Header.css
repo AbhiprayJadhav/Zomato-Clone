@@ -1,0 +1,18 @@
+.navigation-menu {
+  list-style: none;
+  /* Remove default bullets */
+  display: flex;
+  /* Align items horizontally */
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation-menu li {
+  margin: 0px 20px;
+}
+
+
+.navigation-menu li a {
+  text-decoration: none;
+  color: aliceblue;
+}
