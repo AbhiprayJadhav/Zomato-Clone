@@ -1,0 +1,69 @@
+.restaurant-cards {
+  display: grid;
+  /* Use grid layout */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 columns */
+  gap: 50px;
+  /* Space between the cards */
+  margin: 170px;
+  /* Margin around the card container */
+}
+
+.card {
+  height: 260px;
+  width: 330px;
+  background-color: #FFFFFF;
+  /* White background for cards */
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  /* Padding inside each card */
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  /* Scale effect on hover */
+}
+
+.card img {
+  width: 100%;
+  /* Full width */
+  height: 150px;
+  /* Fixed height for uniformity */
+  border-radius: 8px;
+  object-fit: cover;
+  /* Ensures images fit within the card */
+}
+
+/* Optional: Media query for responsiveness */
+@media (max-width: 768px) {
+  .restaurant-cards {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columns on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-cards {
+    grid-template-columns: 1fr;
+    /* 1 column on extra small screens */
+  }
+}
+.card h3 {
+  margin: 8px 0 4px 0;
+  /* Reduced margin for more compact look */
+  font-size: 18px;
+  
+  /* Reduced font size */
+}
+
+.card p {
+  margin: 4px 0;
+  /* Reduced margin between paragraphs */
+  font-size: 14px;
+  /* Reduced font size */
+  
+}

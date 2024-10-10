@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Typography, AppBar, Box, Toolbar, IconButton, Drawer } from '@mui/material';
-import FastfoodIcon from '@mui/icons-material/Fastfood';
+import { AppBar, Box, Toolbar, IconButton, Drawer } from '@mui/material';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import "../../styles/Header.css";
 const Header = () => {
-
   const [mobOpen, setMobOpen] = useState(false);
 
   // Handle Menu Click
@@ -16,35 +14,30 @@ const Header = () => {
   // Menu Drawer
   const drawer = (
     <Box onClick={handleDrawerOpen} sx={{ textAlign: 'left', padding: 2, width: 250 }}>
-      {/* Logo and Title */}
-      <Typography
-        color="goldenrod"
-        variant="h6"
-        component="div"
-        sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}
-      >
-        <FastfoodIcon sx={{ marginRight: 1 }} /> My Restaurant
-      </Typography>
+      {/* Zomato Logo */}
+      <Box sx={{ marginBottom: 2 }}>
+        <img src="/Zomato.svg" alt="Zomato Logo" style={{ width: '150px' }} />
+      </Box>
 
       {/* Navigation Menu */}
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/" style={{ color: 'blue', textDecoration: 'underline', display: 'block' }}>
+          <Link to="/" >
             Home
           </Link>
         </li>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/menu" style={{ color: 'blue', textDecoration: 'underline', display: 'block' }}>
+          <Link to="/menu" >
             Menu
           </Link>
         </li>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/about" style={{ color: 'blue', textDecoration: 'underline', display: 'block' }}>
+          <Link to="/about" >
             About
           </Link>
         </li>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/contact" style={{ color: 'blue', textDecoration: 'underline', display: 'block' }}>
+          <Link to="/contact" >
             Contact
           </Link>
         </li>
@@ -52,34 +45,36 @@ const Header = () => {
     </Box>
   );
 
-
   return (
-    <Box>
-      <AppBar component="nav" sx={{ bgcolor: "black" }}>
-        <Toolbar>
+    <Box sx={{
+      backgroundImage: `url('/pexels-chanwalrus-958545.jpg')`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      height: '500px', // Adjust the height as needed
+      display: 'flex',
+      flexDirection: 'column', // Stack content vertically
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
+    }}>
+      {/* Zomato Header */}
+      <AppBar component="nav" sx={{ bgcolor: "rgba(0, 0, 0, 0.7)" }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          {/* Zomato Logo (First - Aligned to the left) */}
+          <Box>
+            <img src="/Zomato.svg" alt="Zomato Logo" style={{ width: '120px' }} />
+          </Box>
+
           {/* Menu Icon for small screens */}
           <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
-            sx={{
-              mr: 2,
-              display: { sm: "none" }, // Only show on small screens
-            }}
+            sx={{ display: { sm: "none" } }} // Only show on small screens
             onClick={handleDrawerOpen}
           >
             <MenuIcon />
           </IconButton>
-
-          {/* Restaurant Title */}
-          <Typography
-            color="goldenrod"
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-          >
-            <FastfoodIcon /> My Restaurant
-          </Typography>
 
           {/* Navigation Menu for Large Screens */}
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
@@ -87,26 +82,44 @@ const Header = () => {
               display: 'flex',
               gap: '20px',
               margin: 0,
-              padding: 0,
+              padding: 25,
               listStyleType: 'none',
               alignItems: 'center'
             }}>
               <li>
-                <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
+                <Link to="/" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace" }}>Home</Link>
               </li>
               <li>
-                <Link to="/menu" style={{ color: 'white', textDecoration: 'none' }}>Menu</Link>
+                <Link to="/menu" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace", fontSize: "25px" }}>Menu</Link>
               </li>
               <li>
-                <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link>
-              </li>
+                <Link to="/about" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace", fontSize: "25px" }}>About</Link>  </li>
               <li>
-                <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
+                <Link to="/contact" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace", fontSize: "25px" }}>Contact</Link>
               </li>
             </ul>
           </Box>
         </Toolbar>
       </AppBar>
+
+      {/* Zomato Logo instead of text */}
+      <Box sx={{ marginTop: 4 }}>
+        <img src="/Zomato.svg" alt="Zomato Logo Large" style={{ width: '300px' }} />
+      </Box>
+
+      {/* Slogan Section */}
+      <Box sx={{ color: 'white', textAlign: 'center', marginTop: 2 }}>
+        <h2 style={{
+          fontSize: '2rem',
+          color: '#ffffff',
+          marginBottom: '0.5rem',
+        }}>Discover the best food & drinks in Chhindwara</h2>
+        <h3 style={{
+          fontSize: '1.5rem',
+          color: '#ffcc00', // Add contrast with yellow
+          fontStyle: 'italic',
+        }}>Want it? Order it!</h3>
+      </Box>
 
       {/* Drawer for Mobile Navigation */}
       <Box component="nav">
@@ -118,9 +131,11 @@ const Header = () => {
         >
           {drawer}
         </Drawer>
-</Box>
+      </Box>
     </Box>
   );
 };
 
 export default Header;
+
+  

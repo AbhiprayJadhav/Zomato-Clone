@@ -1,205 +1,88 @@
-import React from 'react';
-import { FaMapMarkerAlt, FaBars } from 'react-icons/fa';
+import React, { useState } from 'react';
+import { AppBar, Box, Toolbar, IconButton, Drawer } from '@mui/material';
+import { Link } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Navbar = () => {
-  const styles = {
-    navbar: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundImage: 'url("/bckg img.avif")', // Update with the correct image path
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      height: '100vh', // Full height for the navbar
-      color: 'white',
-      position: 'relative',
-      padding: '0 20px', // Add padding for mobile
-    },
-    navbarTop: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      width: '100%',
-      padding: '10px 20px',
-      fontSize: '14px',
-    },
-    navbarLinks: {
-      display: 'flex',
-      gap: '20px',
-    },
-    link: {
-      textDecoration: 'none',
-      color: 'white',
-      cursor: 'pointer',
-    },
-    navbarMain: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      width: '100%',
-    },
-    menuIcon: {
-      fontSize: '24px',
-      cursor: 'pointer',
-      position: 'absolute',
-      top: '20px',
-      left: '20px',
-    },
-    navbarTitle: {
-      fontSize: '48px', // Responsive size
-      fontWeight: 'bold',
-      marginTop: '20px',
-      textAlign: 'center', // Center on smaller screens
-    },
-    centerText: {
-      fontSize: '18px', // Responsive size
-      marginTop: '10px',
-      textAlign: 'center',
-    },
-    searchContainer: {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundColor: 'white',
-      borderRadius: '50px',
-      padding: '10px',
-      marginTop: '20px',
-      width: '100%',
-      maxWidth: '800px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    },
-    searchInner: {
-      display: 'flex',
-      width: '100%',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-      flexWrap: 'wrap', // Allow wrapping on small screens
-    },
-    icon: {
-      color: 'red',
-      marginRight: '10px',
-    },
-    input: {
-      border: 'none',
-      padding: '10px',
-      borderRadius: '5px',
-      fontSize: '16px',
-      marginRight: '10px',
-      width: '120px',
-      minWidth: '100px', // Ensure it doesn't shrink too much on mobile
-    },
-    searchBox: {
-      flex: '1',
-      border: 'none',
-      padding: '10px',
-      fontSize: '16px',
-      minWidth: '200px',
-      marginRight: '10px',
-    },
-    filterDropdown: {
-      padding: '10px',
-      marginRight: '10px',
-      border: 'none',
-    },
-    locationButton: {
-      backgroundColor: 'white',
-      padding: '10px',
-      border: '2px solid red',
-      color: 'red',
-      borderRadius: '50px',
-      cursor: 'pointer',
-      display: 'flex',
-      alignItems: 'center',
-    },
-    locationIcon: {
-      marginRight: '5px',
-    },
+  const [mobOpen, setMobOpen] = useState(false);
 
-    // Responsive styles using media queries
-    '@media (max-width: 768px)': {
-      navbarTitle: {
-        fontSize: '36px',
-      },
-      centerText: {
-        fontSize: '16px',
-      },
-      searchContainer: {
-        flexDirection: 'column',
-        padding: '15px',
-      },
-      searchInner: {
-        flexDirection: 'column',
-        alignItems: 'stretch',
-      },
-      input: {
-        width: '100%',
-        marginBottom: '10px',
-      },
-      searchBox: {
-        width: '100%',
-        marginBottom: '10px',
-      },
-      filterDropdown: {
-        width: '100%',
-      },
-    },
-    '@media (max-width: 480px)': {
-      navbarTitle: {
-        fontSize: '28px',
-      },
-      centerText: {
-        fontSize: '14px',
-      },
-      searchContainer: {
-        padding: '10px',
-      },
-    },
+  // Handle Menu Click
+  const handleDrawerOpen = () => {
+    setMobOpen(!mobOpen);
   };
 
+  // Menu Drawer
+  const drawer = (
+    <Box onClick={handleDrawerOpen} sx={{ textAlign: 'left', padding: 2, width: 250 }}>
+      <Box sx={{ marginBottom: 2 }}>
+        <img src="/Zomato.svg" alt="Zomato Logo" style={{ width: '150px' }} />
+      </Box>
+
+      <ul style={{ listStyleType: 'none', padding: 0 }}>
+        <li style={{ marginBottom: '10px' }}>
+          <Link to="/">Home</Link>
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <Link to="/menu">Menu</Link>
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <Link to="/about">About</Link>
+        </li>
+        <li style={{ marginBottom: '10px' }}>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+    </Box>
+  );
+
   return (
-    <div style={styles.navbar}>
-      {/* Top links */}
-      <div style={styles.navbarTop}>
-        <span>Get the App</span>
-        <div style={styles.navbarLinks}>
-          <a href="#" style={styles.link}>Investor Relations</a>
-          <a href="#" style={styles.link}>Add restaurant</a>
-          <a href="#" style={styles.link}>Log in</a>
-          <a href="#" style={styles.link}>Sign up</a>
-        </div>
-      </div>
+    <div className="navbar">
+    <AppBar component="nav" sx={{ bgcolor: "rgba(0, 0, 0, 0.7)" }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        {/* Zomato Logo */}
+        <Box>
+          <img src="/Zomato.svg" alt="Zomato Logo" style={{ width: '120px' }} />
+        </Box>
 
-      {/* Main content */}
-      <div style={styles.navbarMain}>
-        <FaBars style={styles.menuIcon} />
-        <h1 style={styles.navbarTitle}>zomato</h1>
-      </div>
-      <div style={styles.centerText}>
-        <h2>Discover the best food & drinks in Chhindwara</h2>
-      </div>
+        {/* Menu Icon for small screens */}
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          sx={{ display: { sm: "none" } }} // Only show on small screens
+          onClick={handleDrawerOpen}
+        >
+          <MenuIcon />
+        </IconButton>
 
-      {/* Search section */}
-      <div style={styles.searchContainer}>
-        <div style={styles.searchInner}>
-          <FaMapMarkerAlt style={styles.icon} />
-          <input type="text" placeholder="Chhindwara" style={styles.input} />
-          <select style={styles.filterDropdown}>
-            <option value="">All</option>
-            <option value="restaurant">Restaurant</option>
-            <option value="cuisine">Cuisine</option>
-            <option value="dish">Dish</option>
-          </select>
-          <input type="text" placeholder="Search for restaurant, cuisine or a dish" style={styles.searchBox} />
-        </div>
-      </div>
+        {/* Navigation Menu for Large Screens */}
+        <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <ul style={{
+            display: 'flex',
+            gap: '20px',
+            margin: 0,
+            padding: 25,
+            listStyleType: 'none',
+            alignItems: 'center'
+          }}>
+            <li><Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link></li>
+            <li><Link to="/menu" style={{ color: 'white', textDecoration: 'none' }}>Menu</Link></li>
+            <li><Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link></li>
+            <li><Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link></li>
+          </ul>
+        </Box>
+      </Toolbar>
 
-      {/* Detect Location Button */}
-      <div style={{ marginTop: '20px' }}>
-        <button style={styles.locationButton}>
-          <FaMapMarkerAlt style={styles.locationIcon} />
-          Detect current location
-        </button>
-      </div>
+      {/* Drawer for Mobile Navigation */}
+      <Drawer style={{ backgroundColor:"#1c1c1c"}}
+        variant="temporary"
+        open={mobOpen}
+        onClose={handleDrawerOpen}
+        sx={{ display: { xs: 'block', sm: 'none' } }}
+      >
+        {drawer}
+      </Drawer>
+      </AppBar>
     </div>
   );
 };

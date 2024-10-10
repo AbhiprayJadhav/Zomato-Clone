@@ -1,0 +1,26 @@
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  display: inline;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  
+}
+
+ul li a:hover {
+  color: #ffcc00;
+}
+
+img {
+  transition: transform 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
