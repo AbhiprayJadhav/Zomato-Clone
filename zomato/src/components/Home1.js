@@ -1,12 +1,12 @@
-import React from 'react'
-import Navbar from '../pages/Navbar'
+import React from 'react';
 import HeroSection from '../pages/HeroSection';
 import RestaurantCard from '../pages/RestaurantCard';
+
 
 const Home1 = () => {
   return (
     <>
-      <Navbar />
+    
       <HeroSection />
       <RestaurantCard/>
     

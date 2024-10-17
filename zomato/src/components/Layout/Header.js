@@ -87,22 +87,22 @@ const Header = () => {
               alignItems: 'center'
             }}>
               <li>
-                <Link to="/" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace" }}>Home</Link>
+                <Link to="/" >Home</Link>
               </li>
               <li>
-                <Link to="/menu" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace", fontSize: "25px" }}>Menu</Link>
+                <Link to="/menu" >Menu</Link>
               </li>
               <li>
-                <Link to="/about" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace", fontSize: "25px" }}>About</Link>  </li>
+                <Link to="/about" >About</Link>  </li>
               <li>
-                <Link to="/contact" style={{ color: 'white', textDecoration: 'none', fontFamily: "Monospace", fontSize: "25px" }}>Contact</Link>
+                <Link to="/contact" >Contact</Link>
               </li>
             </ul>
           </Box>
         </Toolbar>
       </AppBar>
 
-      {/* Zomato Logo instead of text */}
+      
       <Box sx={{ marginTop: 4 }}>
         <img src="/Zomato.svg" alt="Zomato Logo Large" style={{ width: '300px' }} />
       </Box>
@@ -121,7 +121,7 @@ const Header = () => {
         }}>Want it? Order it!</h3>
       </Box>
 
-      {/* Drawer for Mobile Navigation */}
+      {/* Drawer for Mobile Veiw */}
       <Box component="nav">
         <Drawer
           variant="temporary"

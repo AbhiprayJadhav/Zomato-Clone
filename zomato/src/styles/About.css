@@ -1,10 +1,9 @@
-/* About.css */
-
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  margin-top: 80px;
+  margin-bottom: 20px;
 }
 
 .mission-container {
@@ -17,29 +16,45 @@
   position: relative;
 }
 
-.delivery-boy-icon {
-  width: 200px;
+.delivery-boy-icon,
+.rocket-image {
+  width: 100%;
+  max-width: 500px;
   height: auto;
-  position: relative;
-  z-index: 1;
-  /* Ensures the image is above the background */
-}
-
-/* Background splash effect */
-.image-wrapper::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(226, 55, 68, 0.5) 0%, rgba(226, 55, 68, 0) 100%);
-  z-index: 0;
-  border-radius: 40%;
-  transform: translate(-50%, -50%);
 }
 
 .mission-content {
   flex: 1;
   padding: 20px;
+}
+
+.section-title {
+  font-size: 60px;
+  color: #E23744;
+}
+
+.section-text {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.vision-list {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 45px;
+  }
+
+  .section-text {
+    font-size: 16px;
+  }
 }

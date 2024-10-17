@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import '../styles/RestaurantCard.css';
 
 const RestaurantCard = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
   // Sample data for 9 restaurants
   const restaurants = [
     {
@@ -78,29 +81,41 @@ const RestaurantCard = () => {
     },
   ];
 
-  return (<div style={{
-    backgroundColor: "#F4F4F2"
-  }}><h1 className="div1" style={{
-    marginBottom: "20px",
-    textAlign: "center",
-  
-    fontSize: "60px",
-    color: "#E23744",
-    backgroundColor: "#F4F4F2",
-    padding: "32px"
-  }}>Here's our best sellers!!!</h1>
-    <div className="restaurant-cards" style={{ marginTop: "10px" }}>
-      {restaurants.map((restaurant) => (
-        <div className="card" key={restaurant.id}>
-          <img src={restaurant.image} alt={restaurant.name} />
-          <h3>{restaurant.name}</h3>
-          <p>{restaurant.category}</p>
-          <p>{restaurant.price}</p>
-          <p>Delivery time: {restaurant.deliveryTime}</p>
-        </div>
-      ))}
+  const handleCardClick = (id) => {
+    // Navigate to the restaurant detail page based on the card's ID
+    navigate(`/restaurant/${id}`);
+  };
+
+  return (
+    <div className="restaurant-cards-container">
+      <h1
+        style={{
+          marginBottom: "20px",
+          textAlign: "center",
+          fontSize: "60px",
+          color: "#E23744",
+          backgroundColor: "#F4F4F2",
+          padding: "32px",
+        }}
+      >
+        Here's our best sellers!!!
+      </h1>
+      <div className="restaurant-cards">
+        {restaurants.map((restaurant) => (
+          <div
+            className="card"
+            key={restaurant.id}
+            onClick={() => handleCardClick(restaurant.id)} // Add click handler for navigation
+          >
+            <img src={restaurant.image} alt={restaurant.name} />
+            <h3>{restaurant.name}</h3>
+            <p>{restaurant.category}</p>
+            <p>{restaurant.price}</p>
+            <p>Delivery time: {restaurant.deliveryTime}</p>
+          </div>
+        ))}
+      </div>
     </div>
-    <br /></div>
   );
 };
 

@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "name": "McDonald's",
+    "image": "/macd.jpeg",
+    "category": "Burgers, Fast Food",
+    "price": "₹125 off above ₹649",
+    "deliveryTime": "20-25 mins",
+    "description": "McDonald's is a global fast-food chain known for its hamburgers, cheeseburgers, and fries. Enjoy a wide variety of meals and snacks, from breakfast to dinner.",
+    "rating": 4.5,
+    "reviews": 1020,
+    "address": "123 Main St, City Name",
+    "menu": [
+      { "item": "Big Mac", "price": "₹200" },
+      { "item": "French Fries", "price": "₹100" },
+      { "item": "McChicken", "price": "₹150" },
+      { "item": "Coca-Cola", "price": "₹50" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "KFC",
+    "image": "/kfcc.jpeg",
+    "category": "Chicken, Fast Food",
+    "price": "Items at ₹199",
+    "deliveryTime": "30-35 mins",
+    "description": "KFC is famous for its fried chicken. The secret recipe, crispy chicken is loved by many, served with sides like mashed potatoes and biscuits.",
+    "rating": 4.3,
+    "reviews": 850,
+    "address": "456 Market Ave, City Name",
+    "menu": [
+      { "item": "Bucket Chicken", "price": "₹600" },
+      { "item": "Chicken Zinger", "price": "₹250" },
+      { "item": "Hot Wings", "price": "₹180" },
+      { "item": "Pepsi", "price": "₹60" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Burger King",
+    "image": "/burgerking.jpeg",
+    "category": "Burgers, American",
+    "price": "Items at ₹99",
+    "deliveryTime": "35-40 mins",
+    "description": "Burger King is known for its flame-grilled burgers, especially the Whopper. A variety of combos, sides, and beverages are also available.",
+    "rating": 4.1,
+    "reviews": 900,
+    "address": "789 King Blvd, City Name",
+    "menu": [
+      { "item": "Whopper", "price": "₹300" },
+      { "item": "Cheeseburger", "price": "₹180" },
+      { "item": "Onion Rings", "price": "₹120" },
+      { "item": "Sprite", "price": "₹50" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Wow! China",
+    "image": "/wow.avif",
+    "category": "Chinese, Asian",
+    "price": "Items at ₹129",
+    "deliveryTime": "35-40 mins",
+    "description": "Wow! China offers a wide selection of Asian cuisine, from dumplings to noodles. Fresh ingredients and authentic flavors make it a favorite.",
+    "rating": 4.6,
+    "reviews": 700,
+    "address": "321 Asian Food St, City Name",
+    "menu": [
+      { "item": "Fried Rice", "price": "₹150" },
+      { "item": "Chicken Dim Sum", "price": "₹200" },
+      { "item": "Kung Pao Chicken", "price": "₹250" },
+      { "item": "Green Tea", "price": "₹70" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Olio - The Wood Fired...",
+    "image": "/olio.jpg",
+    "category": "Pizzas, Pastas",
+    "price": "₹125 off above ₹249",
+    "deliveryTime": "35-40 mins",
+    "description": "Olio specializes in wood-fired pizzas with fresh ingredients and artisanal dough. Their pasta dishes are also highly recommended.",
+    "rating": 4.8,
+    "reviews": 650,
+    "address": "987 Italian Ave, City Name",
+    "menu": [
+      { "item": "Margherita Pizza", "price": "₹350" },
+      { "item": "Penne Alfredo", "price": "₹300" },
+      { "item": "Garlic Bread", "price": "₹150" },
+      { "item": "Lemonade", "price": "₹80" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Grameen Kulfi",
+    "image": "/kulfi.jpeg",
+    "category": "Desserts, Ice Cream",
+    "price": "60% off upto ₹120",
+    "deliveryTime": "25-30 mins",
+    "description": "Grameen Kulfi offers traditional Indian frozen desserts, including a variety of kulfi flavors and other sweet treats.",
+    "rating": 4.7,
+    "reviews": 400,
+    "address": "543 Dessert Lane, City Name",
+    "menu": [
+      { "item": "Malai Kulfi", "price": "₹100" },
+      { "item": "Pista Kulfi", "price": "₹120" },
+      { "item": "Chocolate Kulfi", "price": "₹130" },
+      { "item": "Falooda", "price": "₹180" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Navratri Meals by LunchBox",
+    "image": "/nav1.jpg",
+    "category": "Veg, North Indian",
+    "price": "Items at ₹149",
+    "deliveryTime": "30-35 mins",
+    "description": "Navratri Meals by LunchBox offers a wide variety of vegetarian dishes, perfect for the festive season. Freshly prepared meals with traditional flavors.",
+    "rating": 4.2,
+    "reviews": 500,
+    "address": "789 Festival St, City Name",
+    "menu": [
+      { "item": "Navratri Thali", "price": "₹250" },
+      { "item": "Paneer Tikka", "price": "₹180" },
+      { "item": "Sabudana Khichdi", "price": "₹150" },
+      { "item": "Lassi", "price": "₹80" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "CFC Shalimar Family...",
+    "image": "/south.jpeg",
+    "category": "Biryani, North Indian",
+    "price": "₹125 off above ₹199",
+    "deliveryTime": "30-35 mins",
+    "description": "CFC Shalimar Family offers a delicious variety of North Indian dishes, specializing in biryanis. Perfect for family meals and celebrations.",
+    "rating": 4.4,
+    "reviews": 720,
+    "address": "123 Biryani Blvd, City Name",
+    "menu": [
+      { "item": "Chicken Biryani", "price": "₹300" },
+      { "item": "Mutton Biryani", "price": "₹350" },
+      { "item": "Paneer Biryani", "price": "₹280" },
+      { "item": "Raita", "price": "₹60" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Domino's Pizza",
+    "image": "/dom.jpeg",
+    "category": "Pizzas, Fast Food",
+    "price": "Get 50% off on orders",
+    "deliveryTime": "30-40 mins",
+    "description": "Domino's Pizza is a global chain known for its fast delivery and wide range of pizza options. Enjoy delicious toppings and combos for any occasion.",
+    "rating": 4.0,
+    "reviews": 1500,
+    "address": "456 Pizza Ln, City Name",
+    "menu": [
+      { "item": "Pepperoni Pizza", "price": "₹400" },
+      { "item": "Veggie Supreme", "price": "₹350" },
+      { "item": "Cheesy Breadsticks", "price": "₹180" },
+      { "item": "Choco Lava Cake", "price": "₹100" }
+    ]
+  }
+]

@@ -1,41 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
 import {
-  Box, TextField, Button, FormControl, InputLabel, Select, MenuItem, FormControlLabel, RadioGroup, Radio,
+  TextField, Button, FormControl, InputLabel, Select, MenuItem, FormControlLabel, RadioGroup, Radio, Dialog, DialogContent, DialogTitle, IconButton,
 } from "@mui/material";
-import Carousel from "react-material-ui-carousel";
+import CloseIcon from "@mui/icons-material/Close"; // Import Close Icon
 
-
-const LoginSignUp = () => {
-  const [isLogin, setIsLogin] = useState(true);
-  const handleFormSwitch = () => setIsLogin(!isLogin);
-
-  const images = [
-    "/path-to-your-image1.jpg",
-    "/path-to-your-image2.jpg",
-    "/path-to-your-image3.jpg",
-  ];
-
+const LoginSignUp = ({ open, handleClose, isLogin }) => {
   return (
-    <Box sx={{ display: "flex", height: "100vh", alignItems: "center" }}>
-      {/* Carousel Section */}
-      <Box sx={{ width: "50%", height: "100%" }}>
-        <img src="/Zomato-logo.png" alt="Zomato Logo" style={{ width: "200px", margin: "20px auto", display: "block" }} />
-        <Carousel>
-          {images.map((src, i) => (
-            <img key={i} src={src} alt={`carousel-${i}`} style={{ width: "100%", height: "100%" }} />
-          ))}
-        </Carousel>
-      </Box>
+    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
+      <DialogTitle>
+        {isLogin ? "Login" : "Sign Up"}
+        {/* Cross Icon in top-right corner */}
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: (theme) => theme.palette.grey[500],
+          }}
+        >
+          <CloseIcon />
+        </IconButton>
+      </DialogTitle>
 
-      {/* Form Section */}
-      <Box sx={{ width: "50%", padding: "20px", backgroundColor: "#f5f5f5" }}>
-        <h2>{isLogin ? "Login" : "Sign Up"}</h2>
-
+      <DialogContent>
         {isLogin ? (
           <>
             <TextField label="Email" variant="outlined" fullWidth margin="normal" />
             <TextField label="Password" type="password" variant="outlined" fullWidth margin="normal" />
-            <Button variant="contained" color="primary" fullWidth>
+            <Button variant="contained" color="primary" fullWidth sx={{ marginTop: "10px" }}>
               Login
             </Button>
           </>
@@ -59,17 +53,13 @@ const LoginSignUp = () => {
                 <MenuItem value="both">Both</MenuItem>
               </Select>
             </FormControl>
-            <Button variant="contained" color="primary" fullWidth>
+            <Button variant="contained" color="primary" fullWidth sx={{ marginTop: "10px" }}>
               Sign Up
             </Button>
           </>
         )}
-
-        <Button onClick={handleFormSwitch} sx={{ marginTop: "10px" }}>
-          {isLogin ? "Switch to Sign Up" : "Switch to Login"}
-        </Button>
-      </Box>
-    </Box>
+      </DialogContent>
+    </Dialog>
   );
 };
 

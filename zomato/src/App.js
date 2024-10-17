@@ -8,34 +8,30 @@ import Navbar from './pages/Navbar';  // Static Navbar component
 import HeroSection from './pages/HeroSection';
 import Home1 from './components/Home1';
 import Footer from './pages/Footer';  // Static Footer component
-import './App.css';
+import RestaurantCard from './pages/RestaurantCard';
+import RestaurantDetail from './pages/RestaurantDetail';
 
 function App() {
   return (
     <div className="App">
-      {/* BrowserRouter wraps the entire app */}
       <BrowserRouter>
-        {/* Navbar stays static at the top of all pages */}
-        <Navbar />
-
-        {/* Define the dynamic content with Routes */}
+        <Navbar />  {/* Navbar is static and will appear on all pages */}
+        
         <Routes>
-          <Route path="/" element={<Home1 />} />
-          <Route path="/footer" element={<Footer />} />
-          <Route path="/navbar" element={<Navbar />} />
+          <Route path="/" element={<Home1 />} />  {/* Home Page */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/*" element={<Pagenotfound />} />
           <Route path="/herosection" element={<HeroSection />} />
+          <Route path="/restaurants" element={<RestaurantCard />} /> {/* Restaurant listing */}
+          <Route path="/restaurant/:id" element={<RestaurantDetail />} /> {/* Restaurant detail by ID */}
+          <Route path="*" element={<Pagenotfound />} />  {/* Catch-all route for 404 */}
         </Routes>
-
-        {/* Footer stays static at the bottom of all pages */}
-        <Footer />
+        
+        <Footer />  {/* Footer is static and will appear on all pages */}
       </BrowserRouter>
     </div>
   );
 }
 
 export default App;
-
