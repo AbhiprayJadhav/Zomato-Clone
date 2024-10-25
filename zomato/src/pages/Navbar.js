@@ -5,9 +5,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LoginSignUp from './LoginSignUp';
 
 const Navbar = () => {
-  const [mobOpen, setMobOpen] = useState(false);
   const [openDialog, setOpenDialog] = useState(false); // For opening modal
   const [isLogin, setIsLogin] = useState(true); // Control whether to show login or signup
+  const [mobOpen, setMobOpen] = useState(false); // State to control mobile drawer
 
   // Handle Menu Click for Mobile Drawer
   const handleDrawerOpen = () => {
@@ -38,16 +38,16 @@ const Navbar = () => {
       </Box>
       <ul style={{ listStyleType: 'none', padding: 0 }}>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/">Home</Link>
+          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Home</Link>
         </li>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/menu">Menu</Link>
+          <Link to="/menu" style={{ textDecoration: 'none', color: 'black' }}>Menu</Link>
         </li>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/about">About</Link>
+          <Link to="/about" style={{ textDecoration: 'none', color: 'black' }}>About</Link>
         </li>
         <li style={{ marginBottom: '10px' }}>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</Link>
         </li>
       </ul>
     </Box>
@@ -98,17 +98,16 @@ const Navbar = () => {
             </Button>
           </Box>
         </Toolbar>
-
-        {/* Drawer for Mobile Navigation */}
-        <Drawer
-          variant="temporary"
-          open={mobOpen}
-          onClose={handleDrawerOpen}
-          sx={{ display: { xs: 'block', sm: 'none' } }}
-        >
-          {drawer}
-        </Drawer>
       </AppBar>
+
+      {/* Drawer for small screens */}
+      <Drawer
+        anchor="left"
+        open={mobOpen}
+        onClose={handleDrawerOpen}
+      >
+        {drawer}
+      </Drawer>
 
       {/* Dialog for Login and Sign Up */}
       <LoginSignUp
